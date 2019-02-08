@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_donate"
+            android:title="Donate"/>
+
+        <item android:id="@+id/nav_my_donations"
+            android:icon="@drawable/ic_my_posts"
+            android:title="Current Donations"/>
+
+        <item android:id="@+id/nav_top_contributors"
+            android:icon="@drawable/ic_top_contributors"
+            android:title="Top Contributors"/>
+
+        <item android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile"/>
+
+        <item android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_faqs"
+            android:title="FAQs"/>
+
+        <item android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="About"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_rate"
+                android:title="Rate and Review"/>
+            <item android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="Share"/>
+            <item android:id="@+id/nav_email"
+                android:icon="@drawable/ic_email_developer"
+                android:title="Email Developer (Report Bug)"/>
+            <item android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout"/>
+        </menu>
+    </item>
+
+</menu>

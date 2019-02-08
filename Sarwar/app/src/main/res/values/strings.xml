@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Sarwar</string>
+    <string name="app_tag_line">Donation that matters</string>
+
+    <string name="facebook_app_id">275351816662944</string>
+    <string name="fb_login_protocol_scheme">fb275351816662944</string>
+
+    <string name="already_a_user">Already have an Account? Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password_hint">Enter a strong Password</string>
+    <string name="password">Password</string>
+    <string name="contact_number">Your Contact Number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="full_name">Your Full Name</string>
+    <string name="user_name">Username</string>
+    <string name="or_login_using">Or Login Using</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer </string>
+
+    <string name="privacy_policy">By logging in, you accept our <b><u>Privacy Policy</u></b></string>
+
+    <string name="quote">\"Smiling for someone is SWEET, but making someone SMILE is the BEST FEELING\"</string>
+
+    <string name="about_us_section_01">Poverty is a significant issue in India, despite being one of the fastest-growing economies in the world. "Sarwar" is an initiative to bring a smile on the face of millions of needy people! It\'s a platform where people who want to donate anything can connect with volunteers actively working in procuring such donations and distributing to the needy ones.</string>
+    <string name="about_us_section_02">Anyone can be a regular donor and be a part of Sarwar family. Beside materialistic donations, we also accept monetary donations, in case if the donor resides outside our operational perimeter.</string>
+    <string name="about_us_section_03">Let\'s pledge to help our brothers and sisters improve their condition and constitute to build a better future with an aim for the welfare of our society. We can do it!</string>
+    <string name="about_us_section_04">Our heartfelt thanks to Sub Registrar Taslima Maam for helping to convert our ideology into reality. She is best known for helping the poor and needy in most of the villages in Warangal, Telangana.</string>
+    <string name="about_us_section_05">The app is developed by Jyotirmoy Paul, an undergraduate in Computer Science, accompanied by Vishnu Nimmala. Our enriched vision of a bright future made it possible to work devotionally in this project.</string>
+
+    <string name="faq_01_question">Why Ads, it\'s annoying?</string>
+    <string name="faq_01_answer">Hey, we are sorry to trouble you, but these bare minimum ads could help us recover the server side cost, which would ensure donations from kind people like you reaches the really needy one and are not spent on keeping this app running.
+	Currently we have no options for disabling the Ads, but in future we might add one.
+	Till then, keep rocking and helping!</string>
+
+    <string name="faq_02_question">Why does this app needs my location?</string>
+    <string name="faq_02_answer">From our side, we are trying our best to cut prices to the minimum possible, your location is needed to find the nearest delivery agent to you, so that he can collect your donation request spending minimum time and effort.
+	And also we would request you to use GPS Connectivity while searching for location, this would ensure a good accuracy.</string>
+
+    <string name="faq_03_question">Why there\'s no listing of previous donation data?</string>
+    <string name="faq_03_answer">The server we are using allows very limited data to be stored, and with our aim to help thousands, we might run out of space in server if every doner\'s data is stored on it, thus we delete a donation data as soon as it\'s collected and verified by the admin. Don\'t worry, your contribution is always remembered and stored in a separate database.</string>
+
+    <string name="faq_04_question">What if no one\'s available on the delivery side?</string>
+    <string name="faq_04_answer">This is very unlikely to happen, as all the volunteers in our Sarwar Family are very hard working. But even if such a situation arises, you will receive a notification right after posting your donation request letting you know about delivery agent\'s unavailability and also your donation data will be deleted from the server. You could try posting it later.</string>
+
+    <string name="faq_05_question">Whom should I contact regarding the app\'s complaint or suggestions?</string>
+    <string name="faq_05_answer">In the drawer menu you would find an option, namely \"Email Developer (Report Bug)\", using that link you can directly get in touch with the developer, write to him about your complaint or suggestions regarding the app. You can expect a reply within 24 to 48 hours.</string>
+
+
+</resources>

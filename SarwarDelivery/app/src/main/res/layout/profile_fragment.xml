@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="60dp"
+        android:gravity="center"
+        android:text="T"
+        android:background="@drawable/profile_identity_background"
+        android:id="@+id/profile_pic"
+        android:layout_gravity="center"
+        android:translationY="-50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#D3D3D3"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/user_name"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Test User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#D3D3D3"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/user_mobile_number"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="998-877-6655"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#D3D3D3"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Aadhar Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="@drawable/ic_aadhar_card"
+        android:id="@+id/aadhar_card_view"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/edit_profile_detail"
+        android:src="@drawable/ic_floating_action_button"
+        android:layout_marginEnd="30dp"
+        android:layout_gravity="end"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

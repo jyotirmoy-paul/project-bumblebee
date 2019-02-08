@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    android:id="@+id/parent_layout"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@color/lightRed"
+    app:cardCornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:paddingBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--detail information view-->
+            <RelativeLayout
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:gravity="start"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="12sp"
+                    android:textColor="#808080"
+                    android:id="@+id/deliveryAgentName"
+                    android:text="Agent Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/deliveryAgentName"
+                    android:textColor="#000"
+                    android:id="@+id/deliveryAgentNameDisplay"
+                    android:text="Aniruddha Paul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/deliveryAgentNameDisplay"
+                    android:textSize="12sp"
+                    android:textColor="#808080"
+                    android:id="@+id/deliveryAgentContact"
+                    android:text="Agent Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/deliveryAgentContact"
+                    android:textColor="#000"
+                    android:id="@+id/deliveryAgentContactDisplay"
+                    android:text="9876543210"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/deliveryAgentContactDisplay"
+                    android:textSize="12sp"
+                    android:textColor="#808080"
+                    android:id="@+id/donationCategory"
+                    android:text="Donation Category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/donationCategory"
+                    android:textColor="#000"
+                    android:id="@+id/donationCategoryDisplay"
+                    android:text="Fruits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_margin="5dp"
+                android:id="@+id/donation_cover_photo"
+                android:contentDescription="Donation Cover Photo"
+                android:src="@drawable/fruits_graphic_asset"
+                android:layout_width="200dp"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/donation_status"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:textColor="@color/deepRed"
+            android:textStyle="bold"
+            android:text="Waiting for pickup...."
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:focusable="false"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/delete_donation_details_btn"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button"
+            android:text="Confirm collection and delete"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+
+

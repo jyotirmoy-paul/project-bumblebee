@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Sarwar - Delivery</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer </string>
+
+    <string name="quote">\"Smiling for someone is SWEET, but making someone SMILE is the BEST FEELING\"</string>
+
+    <string name="about_us_section_01">Poverty is a significant issue in India, despite being one of the fastest-growing economies in the world. "Sarwar" is an initiative to bring a smile on the face of millions of needy people! It\'s a platform where people who want to donate anything can connect with volunteers actively working in procuring such donations and distributing to the needy ones.</string>
+    <string name="about_us_section_02">Anyone can be a regular donor and be a part of Sarwar family. Beside materialistic donations, we also accept monetary donations, in case if the donor resides outside our operational perimeter.</string>
+    <string name="about_us_section_03">Let\'s pledge to help our brothers and sisters improve their condition and constitute to build a better future with an aim for the welfare of our society. We can do it!</string>
+    <string name="about_us_section_04">Our heartfelt thanks to Sub Registrar Taslima Maam for helping to convert our ideology into reality. She is best known for helping the poor and needy in most of the villages in Warangal, Telangana.</string>
+    <string name="about_us_section_05">The app is developed by Jyotirmoy Paul, an undergraduate in Computer Science, accompanied by Vishnu Nimmala. Our enriched vision of a bright future made it possible to work devotionally in this project.</string>
+
+    <string name="faq_01_question">Why is my Aadhar card needed?</string>
+    <string name="faq_01_answer">As a Sarwar family member, we would like to keep a record of your contribution to the society, thus to confirm your identity, keeping an identification card along with your contact number will be best of our interest.</string>
+
+    <string name="faq_02_question">Why is the map showing wrong directions?</string>
+    <string name="faq_02_answer">For the map to show exact and accurate directions, it is required by both parties to use GPS to set their current location. As the app is designed to work with and without GPS connectivity, the accuracy is not always guaranteed.</string>
+
+    <string name="faq_03_question">Why ain\'t I receiving any donation requests?</string>
+    <string name="faq_03_answer">First of all, have you switched on Availability in your app? If yes, then probably because of your vagueness in identification card. If you have uploaded a good photo of your card, then might be the admin is still to go through it. But the worst part is, you might be far away from the donors! In that case, try using your GPS to set location, that improves the accuracy.</string>
+
+    <string name="faq_04_question">Whom should I contact regarding the app\'s complaint or suggestions?</string>
+    <string name="faq_04_answer">In the drawer menu you would find an option, namely \"Email Developer (Report Bug)\", using that link you can directly get in touch with the Developer, you can write to him about your complaint or suggestions regarding the app. You can expect a reply within 24 to 48 hours.</string>
+
+
+</resources>

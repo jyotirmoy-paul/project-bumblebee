@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/pre_loading"
+        android:visibility="gone"
+        android:background="@drawable/admin_bg"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:text="Fetching donor data...."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_weight="4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#484848"
+            android:text="Top 30 contributors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/top_bar"
+        android:background="@color/lightBlue"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginStart="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:text="Donor Name"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginEnd="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:text="Total donations made"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:id="@+id/donor_contribution_data"
+        android:visibility="gone"
+        android:divider="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/button_bar"
+        android:background="@color/lightGreen"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_name"
+            android:textColor="#000"
+            android:layout_marginStart="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:text="Jyotirmoy Paul"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/my_number"
+            android:textColor="#000"
+            android:layout_marginEnd="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:text="267"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

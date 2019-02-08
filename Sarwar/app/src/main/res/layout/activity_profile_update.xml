@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:background="@color/colorPrimary"
+        android:layout_height="0dp"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimaryDark">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/complete_profile_popup"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:text="Please complete your profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:textSize="60dp"
+                android:gravity="center"
+                android:text="J"
+                android:background="@drawable/profile_identity_background"
+                android:id="@+id/profile_pic"
+                android:layout_gravity="center"
+                android:translationY="-50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"  />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#D3D3D3"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="Username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:hint="-"
+                android:textColorHint="#fff"
+                android:backgroundTint="@color/colorAccent"
+                android:textStyle="bold"
+                android:id="@+id/user_name"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#D3D3D3"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:hint="-"
+                android:textColorHint="#fff"
+                android:backgroundTint="@color/colorAccent"
+                android:textStyle="bold"
+                android:id="@+id/user_email"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#D3D3D3"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:hint="-"
+                android:textColorHint="#fff"
+                android:backgroundTint="@color/colorAccent"
+                android:textStyle="bold"
+                android:id="@+id/user_address"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#D3D3D3"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="Mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:hint="-"
+                android:textColorHint="#fff"
+                android:backgroundTint="@color/colorAccent"
+                android:textStyle="bold"
+                android:id="@+id/user_mobile_number"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_marginTop="10dp"
+                android:id="@+id/save_profile_details"
+                android:src="@drawable/ic_save"
+                android:layout_marginEnd="30dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+</LinearLayout>

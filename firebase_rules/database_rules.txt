@@ -1,0 +1,56 @@
+// database rules to protect the user data
+
+{
+  "rules": {
+    
+    // following rules only allow the user himself to read his/her password
+    "phone_signed_in": {
+      ".write": "auth != null",
+      "$uid":{
+        ".read": "auth.uid == $uid",
+        ".write": "auth != null"
+      }
+  	},
+    
+    // following rules to protect the admin data
+    "admin_data":{
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    
+    // following rules to protect the delivery agent data
+    "delivery_agent_data": {
+      ".read": "auth != null",
+      "$uid": {
+        "contact_info": {
+          ".write" : "auth.uid == $uid"
+        },
+        "user_info":{
+          "isVerified":{
+            ".write" : "auth != null" // isVerified can be changed by the admin
+          },
+          ".write" : "auth.uid == $uid"
+        }
+      }
+    },
+      
+    // protecting the general user data
+    "donor_data": {
+      "$mode_of_signin":{
+        "$uid":{
+          ".read": "auth.uid == $uid",
+          ".write": "auth.uid == $uid"
+        }
+      }
+    },
+      
+    // and for the other data, like donation data, just limit the user to be authenticated
+    "$any_other_child":{
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+    
+  }
+}
