@@ -36,6 +36,8 @@ import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdExtendedListener;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -219,63 +221,81 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
                                     task.getResult().toString(), latLong, donorAddress, currentDateTime, userRegTokenKey, Constants.STATUS_WAITING
                                     ,FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                            databaseReference.child("donation_data").setValue(donationData);
+                            databaseReference.child("donation_data").setValue(donationData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
 
-                            if(interstitialAd != null && interstitialAd.isAdLoaded()){
-                                interstitialAd.show();
+                                    // show ad only after donation data has been uploaded successfully
+                                    if(interstitialAd != null && interstitialAd.isAdLoaded()){
 
-                                interstitialAd.setAdListener(new InterstitialAdExtendedListener() {
-                                    @Override
-                                    public void onInterstitialActivityDestroyed() {
+                                        interstitialAd.show();
+
+                                        interstitialAd.setAdListener(new InterstitialAdExtendedListener() {
+                                            @Override
+                                            public void onInterstitialActivityDestroyed() {
+
+                                            }
+
+                                            @Override
+                                            public void onInterstitialDisplayed(Ad ad) {
+
+                                            }
+
+                                            @Override
+                                            public void onInterstitialDismissed(Ad ad) {
+
+                                                Toast.makeText(getApplicationContext(), "You donation data has been submitted successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(DonationDataPostingActivity.this, MainActivity.class));
+                                                DonationDataPostingActivity.this.finish();
+
+                                            }
+
+                                            @Override
+                                            public void onError(Ad ad, AdError adError) {
+
+                                            }
+
+                                            @Override
+                                            public void onAdLoaded(Ad ad) {
+
+                                            }
+
+                                            @Override
+                                            public void onAdClicked(Ad ad) {
+
+                                            }
+
+                                            @Override
+                                            public void onLoggingImpression(Ad ad) {
+
+                                            }
+                                        });
 
                                     }
-
-                                    @Override
-                                    public void onInterstitialDisplayed(Ad ad) {
-
-                                    }
-
-                                    @Override
-                                    public void onInterstitialDismissed(Ad ad) {
+                                    else{
+                                        // if interstitial ad is not loaded, then just close this activity
 
                                         Toast.makeText(getApplicationContext(), "You donation data has been submitted successfully", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(DonationDataPostingActivity.this, MainActivity.class));
                                         DonationDataPostingActivity.this.finish();
 
                                     }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                                }
+                            });
 
-                                    @Override
-                                    public void onError(Ad ad, AdError adError) {
 
-                                    }
-
-                                    @Override
-                                    public void onAdLoaded(Ad ad) {
-
-                                    }
-
-                                    @Override
-                                    public void onAdClicked(Ad ad) {
-
-                                    }
-
-                                    @Override
-                                    public void onLoggingImpression(Ad ad) {
-
-                                    }
-                                });
-
-                            }
-                            else{
-                                // if interstitial ad is not loaded, then just close this activity
-
-                                Toast.makeText(getApplicationContext(), "You donation data has been submitted successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(DonationDataPostingActivity.this, MainActivity.class));
-                                DonationDataPostingActivity.this.finish();
-
-                            }
 
                         }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -318,7 +338,7 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
             Toast.makeText(getApplicationContext(), "You can now post!", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -357,7 +377,7 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
 
     // time period checker method
     public Boolean isInTimePeriod(){
-        return true; // TODO: comment this line, it is intended for testing purposes only
+        return true; // TODO: comment this line, intended for testing purposes only
 /*
         Calendar now = Calendar.getInstance();
         int hour = now.get(Calendar.HOUR_OF_DAY);
