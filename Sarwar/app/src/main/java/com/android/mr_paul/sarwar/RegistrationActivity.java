@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.android.mr_paul.sarwar.UtilityPackage.Constants;
 import com.android.mr_paul.sarwar.UtilityPackage.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
@@ -197,13 +198,25 @@ public class RegistrationActivity extends AppCompatActivity {
                                         UserInfo userInfo = new UserInfo(userName,"-",userPhone,"-",Constants.NO);
 
                                         FirebaseDatabase.getInstance().getReference().child("donor_data").child("phone_signed_in")
-                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("user_info").setValue(userInfo);
+                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("user_info").setValue(userInfo)
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // only handle the failure --- inform the user
+                                                Toast.makeText(RegistrationActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
 
                                         Map<String, Object> defaultData = new HashMap<>();
                                         defaultData.put("name", userName);
                                         defaultData.put("number","0");
                                         FirebaseFirestore.getInstance().document("donor_contribution_data/" + FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                                .set(defaultData);
+                                                .set(defaultData).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(RegistrationActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
 
                                         AlertDialog.Builder builder;
                                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
