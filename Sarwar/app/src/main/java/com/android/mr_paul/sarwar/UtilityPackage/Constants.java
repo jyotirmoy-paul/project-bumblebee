@@ -26,6 +26,8 @@ public class Constants {
     public static final String STATUS_ACCEPTED = "accepted";
     public static final String STATUS_REJECTED = "rejected";
 
+    public static final String TRY_AGAIN_FAILURE = "Check your internet connection and try again!";
+
     public static final String NOTIFICATION_CHANNEL_ID = "com.android.mr_paul.sarwar";
 
     public static final String EMAIL_DOMAIN = "@cipherresfeber.com";
@@ -45,7 +47,7 @@ public class Constants {
 
     public static final String COLLECTED = "collected";
 
-    public static final String FACEBOOK_BANNER_AD_KEY = "275351816662944_285282065669919"; // 275351816662944_285282065669919 // commenting the ad_key for testing purpose
-    public static final String FACEBOOK_INTERSTITIAL_AD_KEY = "275351816662944_285294879001971"; // 275351816662944_285294879001971 // commenting the ad_key for testing purpose
+    public static final String FACEBOOK_BANNER_AD_KEY = ""; // 275351816662944_285282065669919 // commenting the ad_key for testing purpose
+    public static final String FACEBOOK_INTERSTITIAL_AD_KEY = ""; // 275351816662944_285294879001971 // commenting the ad_key for testing purpose
 
 }
