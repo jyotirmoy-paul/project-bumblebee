@@ -28,6 +28,7 @@ import com.bumptech.glide.Glide;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -181,6 +182,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                         .child(userUid).child("user_info");
 
                 UserInfo userInfo = new UserInfo(newUserName,newEmail,newMobileNumber,newAddress, Constants.YES);
+
                 databaseReference.setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -189,6 +191,11 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                         startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
                         ProfileUpdateActivity.this.finish();
 
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(ProfileUpdateActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -204,7 +211,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
     // show banner ad section is defined here
     void showBannerAd(){
-        AdView adView = new AdView(ProfileUpdateActivity.this, "275351816662944_285282065669919", AdSize.BANNER_HEIGHT_50);
+        AdView adView = new AdView(ProfileUpdateActivity.this, Constants.FACEBOOK_BANNER_AD_KEY, AdSize.BANNER_HEIGHT_50);
 
         LinearLayout adContainer = findViewById(R.id.banner_container);
         adContainer.addView(adView);
