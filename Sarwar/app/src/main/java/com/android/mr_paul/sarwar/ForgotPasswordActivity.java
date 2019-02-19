@@ -2,8 +2,11 @@ package com.android.mr_paul.sarwar;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -68,6 +71,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         sendOtpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(!isNetworkAvailable()){
+                    Toast.makeText(ForgotPasswordActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 final String userPhone = userPhoneDisplay.getText().toString().trim();
 
@@ -139,6 +147,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         verifyOtpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!isNetworkAvailable()){
+                    Toast.makeText(ForgotPasswordActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 verifyCode();
             }
         });
@@ -249,6 +261,13 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 
