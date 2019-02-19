@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -120,6 +122,12 @@ public class ProfileUpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // check if internet connection is available or not
+                if(!isNetworkAvailable()){
+                    Toast.makeText(ProfileUpdateActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // check for the validation of user name, user email, user mobile and address
 
                 String newUserName = userNameDisplay.getText().toString().trim();
@@ -195,7 +203,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ProfileUpdateActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileUpdateActivity.this, Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -218,6 +226,13 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
         adView.loadAd();
 
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }
