@@ -27,6 +27,7 @@ public class Constants {
     public static final String STATUS_REJECTED = "rejected";
 
     public static final String TRY_AGAIN_FAILURE = "Check your internet connection and try again!";
+    public static final String NETWORK_ERROR = "Failed! Try Again Later!";
 
     public static final String NOTIFICATION_CHANNEL_ID = "com.android.mr_paul.sarwar";
 
