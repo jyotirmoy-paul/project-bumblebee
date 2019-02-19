@@ -2,9 +2,12 @@ package com.android.mr_paul.sarwar;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +67,11 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(!isNetworkAvailable()){
+                    Toast.makeText(RegistrationActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 EditText userNameDisplay = findViewById(R.id.user_name);
                 EditText userPhoneDisplay = findViewById(R.id.user_phone_number);
                 EditText userPasswordDisplay = findViewById(R.id.user_password);
@@ -116,6 +124,10 @@ public class RegistrationActivity extends AppCompatActivity {
         findViewById(R.id.verify_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!isNetworkAvailable()){
+                    Toast.makeText(RegistrationActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 verifyCode();
             }
         });
@@ -198,14 +210,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                         UserInfo userInfo = new UserInfo(userName,"-",userPhone,"-",Constants.NO);
 
                                         FirebaseDatabase.getInstance().getReference().child("donor_data").child("phone_signed_in")
-                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("user_info").setValue(userInfo)
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                // only handle the failure --- inform the user
-                                                Toast.makeText(RegistrationActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
+                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("user_info").setValue(userInfo);
 
                                         Map<String, Object> defaultData = new HashMap<>();
                                         defaultData.put("name", userName);
@@ -291,6 +296,13 @@ public class RegistrationActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }
