@@ -14,6 +14,8 @@ import android.graphics.Matrix;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -155,6 +157,12 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
             @Override
             public void onClick(View v) {
 
+                // check if network is available or not
+                if(!isNetworkAvailable()){
+                    Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // check for time period
                 // users can donate only between 06:00 - 12:00 or between 13:00 - 18:00
 
@@ -284,18 +292,22 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                                    progressDialog.cancel();
+                                    Toast.makeText(DonationDataPostingActivity.this, Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
                                 }
                             });
-
-
+                        }
+                        else{
+                            progressDialog.cancel();
+                            Toast.makeText(DonationDataPostingActivity.this, Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
 
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                        progressDialog.cancel();
+                        Toast.makeText(DonationDataPostingActivity.this, Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -338,7 +350,7 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
             Toast.makeText(getApplicationContext(), "You can now post!", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(getApplicationContext(), Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -410,6 +422,13 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
         interstitialAd = new InterstitialAd(DonationDataPostingActivity.this, Constants.FACEBOOK_INTERSTITIAL_AD_KEY);
         interstitialAd.loadAd();
 
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }
