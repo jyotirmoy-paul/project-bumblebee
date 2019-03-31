@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.android.mr_paul.sarwar_admin.Fragments.CollectedItemsFragment;
 import com.android.mr_paul.sarwar_admin.Fragments.DeliveryAgentFragment;
+import com.android.mr_paul.sarwar_admin.Fragments.NewsFeedFragment;
 import com.android.mr_paul.sarwar_admin.Fragments.PendingDeliveryFragment;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
@@ -21,10 +22,12 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int i) {
         switch (i){
             case 0:
-                return new CollectedItemsFragment();
+                return new NewsFeedFragment();
             case 1:
                 return new PendingDeliveryFragment();
             case 2:
+                return new CollectedItemsFragment();
+            case 3:
                 return new DeliveryAgentFragment();
             default:
                 return null;

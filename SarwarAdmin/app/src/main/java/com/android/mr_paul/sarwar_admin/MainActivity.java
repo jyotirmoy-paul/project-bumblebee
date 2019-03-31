@@ -19,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
         // adding icons to the tabLayout
         int[] icons = new int[]{
-                R.drawable.ic_delivery_task, // collected items
+                R.drawable.ic_news_feed, // news posting arena
                 R.drawable.ic_new_donation_available, // donation collection waiting
+                R.drawable.ic_delivery_task, // collected items
                 R.drawable.ic_new_delivery_agent // application of new delivery agent
         };
 
-        // create 3 new tabs and add the respective icons to them
+        // create 4 new tabs and add the respective icons to them
 
         for(int icon : icons){
             tabLayout.addTab(tabLayout.newTab().setIcon(icon));
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab){}
         });
 
-        viewPager.setCurrentItem(1); // set the new donation available section as default
+        viewPager.setCurrentItem(1); // set the new donation_available_section as default
 
     }
 
