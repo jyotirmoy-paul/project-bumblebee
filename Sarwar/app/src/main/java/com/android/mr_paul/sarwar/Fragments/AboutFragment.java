@@ -33,7 +33,7 @@ public class AboutFragment extends Fragment {
                 }
 
             }
-        },5000 + new Random().nextInt(3000)); // 5 - 8 seconds later
+        },10000 + new Random().nextInt(10000)); // 10 - 20 seconds later
 
 
         return view;

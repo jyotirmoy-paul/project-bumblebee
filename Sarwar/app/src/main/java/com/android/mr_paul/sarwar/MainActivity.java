@@ -26,6 +26,7 @@ import com.android.mr_paul.sarwar.Fragments.AboutFragment;
 import com.android.mr_paul.sarwar.Fragments.DonateFragment;
 import com.android.mr_paul.sarwar.Fragments.FaqFragment;
 import com.android.mr_paul.sarwar.Fragments.MyDonationsFragment;
+import com.android.mr_paul.sarwar.Fragments.NewsFeedFragment;
 import com.android.mr_paul.sarwar.Fragments.ProfileFragment;
 import com.android.mr_paul.sarwar.Fragments.TopContributorsFragment;
 import com.android.mr_paul.sarwar.UtilityPackage.Constants;
@@ -117,27 +118,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.nav_donate:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DonateFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DonateFragment()).commit();
                 getSupportActionBar().setTitle("Select Category");
                 break;
+            case R.id.nav_news_feed:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFeedFragment()).commit();
+                getSupportActionBar().setTitle("News Feed");
+                break;
             case R.id.nav_my_donations:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MyDonationsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyDonationsFragment()).commit();
                 getSupportActionBar().setTitle("Current Donations");
                 break;
             case R.id.nav_top_contributors:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TopContributorsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TopContributorsFragment()).commit();
                 getSupportActionBar().setTitle("Top Contributors");
                 break;
             case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ProfileFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
                 getSupportActionBar().setTitle("Profile");
                 break;
             case R.id.nav_about:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AboutFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutFragment()).commit();
                 getSupportActionBar().setTitle("About Us");
                 break;
             case R.id.nav_faq:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FaqFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FaqFragment()).commit();
                 getSupportActionBar().setTitle("FAQs");
                 break;
             case R.id.nav_logout:

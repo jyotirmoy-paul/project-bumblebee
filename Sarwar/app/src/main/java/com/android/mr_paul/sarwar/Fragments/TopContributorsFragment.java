@@ -127,7 +127,7 @@ public class TopContributorsFragment extends Fragment {
                 }
 
             }
-        }, 5000 + new Random().nextInt(5000)); // wait for 5 - 10 seconds
+        }, 10000 + new Random().nextInt(10000)); // wait for 10 - 20 seconds
     }
 
 }
