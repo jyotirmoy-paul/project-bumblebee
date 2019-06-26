@@ -48,7 +48,7 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:text="Loading awesome donations...."
+            android:text="Donation requests uploaded by users will be shown here, requires your approval"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -57,7 +57,7 @@
             android:textSize="15sp"
             android:textColor="#606060"
             android:gravity="center"
-            android:text="After you receive a donation, confirm it in the app to delete it from the server!"
+            android:text="If you approve, delivery agent allotted will be able to collect the donation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

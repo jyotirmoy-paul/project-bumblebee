@@ -48,7 +48,7 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:text="We are trying to load your data...."
+            android:text="Donations that has been collected will be shown here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -61,7 +61,7 @@
             android:textSize="15sp"
             android:textColor="#606060"
             android:gravity="center"
-            android:text="Tips: Keep your internet connection always on"
+            android:text="Tips: Keep your internet connection always on to receive notifications of all events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

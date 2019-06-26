@@ -48,7 +48,7 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:text="Please wait, Fetching data...."
+            android:text="Delivery Agents in SARWAR Family will show up here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -57,7 +57,7 @@
             android:textSize="15sp"
             android:textColor="#606060"
             android:gravity="center"
-            android:text="Tips: Verify delivery agents, or else they won't be available!"
+            android:text="Tips: Verify delivery agents, or else they won't be available to collect donations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
