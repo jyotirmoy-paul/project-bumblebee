@@ -131,7 +131,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
             Glide.with(this).load(Uri.parse(aadharCardLink)).into(aadharCardView);
         }
 
-        profilePicView.setText(userName.toUpperCase().charAt(0) + "");
+        profilePicView.setText(String.valueOf(userName.toUpperCase().charAt(0)));
 
         // to update user info
         saveProfileDetail.setOnClickListener(new View.OnClickListener() {
@@ -196,18 +196,11 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                                 // finally upload to the database
                                 databaseReference.setValue(new UserInfo(userName,userMobile,task.getResult().toString(),Constants.YES,format.format(new Date()),Constants.NO));
 
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
+                                pd.cancel();
+                                pd.dismiss();
 
-                                        pd.cancel();
-                                        pd.dismiss();
-
-                                        startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
-                                        ProfileUpdateActivity.this.finish();
-
-                                    }
-                                }, 500); // wait for 500 ms before changing activity
+                                startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
+                                ProfileUpdateActivity.this.finish();
 
 
                             }
@@ -269,17 +262,10 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                                                     // if a user upload his/her aadhar card, then change his verification status
                                                     databaseReference.child("isVerified").setValue(Constants.NO);
 
-                                                    new Handler().postDelayed(new Runnable() {
-                                                        @Override
-                                                        public void run() {
+                                                    pd.cancel();
 
-                                                            pd.cancel();
-
-                                                            startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
-                                                            ProfileUpdateActivity.this.finish();
-
-                                                        }
-                                                    }, 500); // wait for 500 ms before changing activity
+                                                    startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
+                                                    ProfileUpdateActivity.this.finish();
 
                                                 }
                                             }

@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     ProgressDialog pd;
     SharedPreferences sharedPreferences;
+    DatabaseReference databaseReference;
 
 
     @Override
@@ -132,71 +133,67 @@ public class LoginActivity extends AppCompatActivity {
 
     // this method is used to update the user related info to the shared preference
     public void updateSharedPreference(String uid){
-
-        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("delivery_agent_data").child(uid);
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                final UserInfo userInfo = dataSnapshot.getValue(UserInfo.class);
-                SharedPreferences.Editor editor = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE).edit();
-
-                editor.putString(Constants.USER_NAME, userInfo.getName());
-                editor.putString(Constants.USER_PHONE_NUMBER, userInfo.getPhoneNumber());
-                editor.putString(Constants.USER_AADHAR_CARD_PHOTO_LINK, userInfo.getAadharCardLink());
-
-
-                if(Constants.YES.equals(userInfo.getIsProfileCompleted())){
-                    editor.putBoolean(Constants.IS_PROFILE_COMPLETED, true);
-                }
-                else{
-                    editor.putBoolean(Constants.IS_PROFILE_COMPLETED, false);
-                }
-
-                editor.putBoolean(Constants.IS_USER_LOGGED_IN, true);
-                editor.apply();
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        pd.cancel();
-                        pd.dismiss();
-
-                       if(Constants.YES.equals(userInfo.getIsProfileCompleted())){
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            LoginActivity.this.finish();
-                       }
-                       else{
-                           startActivity(new Intent(LoginActivity.this, ProfileUpdateActivity.class));
-                           LoginActivity.this.finish();
-                       }
-
-                    }
-                }, 500); // wait for 500 ms before changing activity
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("delivery_agent_data").child(uid);
+        databaseReference.addChildEventListener(childEventListener);
     }
+
+    private ChildEventListener childEventListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            final UserInfo userInfo = dataSnapshot.getValue(UserInfo.class);
+            SharedPreferences.Editor editor = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE).edit();
+
+            editor.putString(Constants.USER_NAME, userInfo.getName());
+            editor.putString(Constants.USER_PHONE_NUMBER, userInfo.getPhoneNumber());
+            editor.putString(Constants.USER_AADHAR_CARD_PHOTO_LINK, userInfo.getAadharCardLink());
+
+
+            if(Constants.YES.equals(userInfo.getIsProfileCompleted())){
+                editor.putBoolean(Constants.IS_PROFILE_COMPLETED, true);
+            }
+            else{
+                editor.putBoolean(Constants.IS_PROFILE_COMPLETED, false);
+            }
+
+            editor.putBoolean(Constants.IS_USER_LOGGED_IN, true);
+            editor.apply();
+
+            pd.cancel();
+            pd.dismiss();
+
+            if(Constants.YES.equals(userInfo.getIsProfileCompleted())){
+                databaseReference.removeEventListener(childEventListener);
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                LoginActivity.this.finish();
+            }
+            else{
+                databaseReference.removeEventListener(childEventListener);
+                startActivity(new Intent(LoginActivity.this, ProfileUpdateActivity.class));
+                LoginActivity.this.finish();
+            }
+
+        }
+
+        @Override
+        public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+        }
+
+        @Override
+        public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
+    };
 
 }

@@ -32,7 +32,7 @@
             android:textColor="#000"
             android:textSize="22sp"
             android:gravity="center"
-            android:text="We are trying to fetch data..."
+            android:text="Your donation collection tasks will be shown here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -40,7 +40,7 @@
             android:textColor="#606060"
             android:textSize="15sp"
             android:gravity="center"
-            android:text="Meanwhile, keep your internet connection always active"
+            android:text="Meanwhile, keep your internet connection and GPS active"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -49,7 +49,7 @@
             android:textColor="#606060"
             android:textSize="15sp"
             android:gravity="center"
-            android:text="Tips: If you do not want to receive donation requests, turn off your availability"
+            android:text="If you wish to receive donation requests, you have to mark yourself as 'Available'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
