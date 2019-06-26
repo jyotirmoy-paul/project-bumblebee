@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -50,29 +50,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileUpdateActivity"
+            android:name=".activities.ProfileUpdateActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DonationActivity"
+            android:name=".activities.DonationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DonationDataPostingActivity"
+            android:name=".activities.DonationDataPostingActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".activities.RegistrationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:screenOrientation="portrait" />
 
-        <service android:name=".Services.FirebaseInstanceService">
+        <service android:name=".services.FirebaseInstanceService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".activities.SplashScreenActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

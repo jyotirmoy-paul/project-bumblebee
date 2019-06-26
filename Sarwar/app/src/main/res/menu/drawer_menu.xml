@@ -8,17 +8,9 @@
             android:icon="@drawable/ic_donate"
             android:title="Donate"/>
 
-        <item android:id="@+id/nav_news_feed"
-            android:icon="@drawable/ic_news_feed"
-            android:title="News Feed"/>
-
         <item android:id="@+id/nav_my_donations"
             android:icon="@drawable/ic_my_posts"
-            android:title="Current Donations"/>
-
-        <item android:id="@+id/nav_top_contributors"
-            android:icon="@drawable/ic_top_contributors"
-            android:title="Top Contributors"/>
+            android:title="Current Donation Status"/>
 
         <item android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"

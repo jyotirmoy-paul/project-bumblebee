@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.android.mr_paul.sarwar_admin.UtilityPackage.PageAdapter;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
