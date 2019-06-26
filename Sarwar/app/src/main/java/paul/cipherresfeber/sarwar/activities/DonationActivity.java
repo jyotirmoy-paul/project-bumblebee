@@ -1,5 +1,8 @@
 package paul.cipherresfeber.sarwar.activities;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -60,6 +63,19 @@ public class DonationActivity extends AppCompatActivity {
         if(categoryResourceId == R.drawable.money_graphic_asset){
             monetaryDonationLayout.setVisibility(View.VISIBLE);
             materialDonationLayout.setVisibility(View.GONE);
+
+            findViewById(R.id.txvPhoneNumber).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("phone_number", ((TextView)v).getText().toString());
+                    clipboard.setPrimaryClip(clip);
+
+                    Toast.makeText(DonationActivity.this,
+                            "Copied to clipboard",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         else{
             materialDonationLayout.setVisibility(View.VISIBLE);

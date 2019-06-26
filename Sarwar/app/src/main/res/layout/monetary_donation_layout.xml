@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:gravity="center_vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -7,8 +10,61 @@
 
     <TextView
         android:gravity="center"
-        android:text="Details like Bank Account number or UPI ID will be added soon...."
+        android:layout_marginBottom="20dp"
+        android:textColor="#000"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:text="Bank Account Details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#000"
+        android:textSize="17sp"
+        android:text="Name: Sarwar Charitable Trust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#000"
+        android:textSize="17sp"
+        android:text="Account Number: 6622101001873"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#000"
+        android:textSize="17sp"
+        android:text="Bank Name: Canara Bank, Bhupalapalle Branch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#000"
+        android:textSize="17sp"
+        android:text="IFSC: CNRB0006622"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#000"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:text="UPI - Google Pay / PhonePe Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txvPhoneNumber"
+        android:drawablePadding="10dp"
+        android:drawableEnd="@drawable/ic_copy"
+        android:textColor="#000"
+        android:textSize="17sp"
+        android:text="Phone Number: 8886556337"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
