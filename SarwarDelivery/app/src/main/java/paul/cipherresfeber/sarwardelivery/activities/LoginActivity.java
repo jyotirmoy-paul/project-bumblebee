@@ -48,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         pd = new ProgressDialog(LoginActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
+
 
         // reference to the views
         Button phoneSignIn = findViewById(R.id.sign_up_btn);

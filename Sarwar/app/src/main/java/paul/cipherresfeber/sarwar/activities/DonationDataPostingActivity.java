@@ -76,6 +76,8 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
         showInterstitialAd();
 
         pd = new ProgressDialog(DonationDataPostingActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
 
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE);
 

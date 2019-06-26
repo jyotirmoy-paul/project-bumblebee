@@ -41,15 +41,15 @@ public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDet
 
     private AvailableDonationDetailClass data;
 
-    public CollectedDonationsAdapter(Context c, int resources, ArrayList<AvailableDonationDetailClass> list){
+    public CollectedDonationsAdapter(Context c, int resources, ArrayList<AvailableDonationDetailClass> list) {
         super(c, resources, list);
     }
 
     @Override
-    public View getView(int position,  View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(convertView == null){
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.collected_donations_layout, parent, false);
         }
 
@@ -73,7 +73,7 @@ public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDet
         Glide.with(getContext()).load(Uri.parse(data.getDonationMainPhoto())).into(donationCoverPhotoDisplay);
 
         String donationStatus = data.getDonationStatus();
-        if(Constants.COLLECTED.equals(donationStatus)){
+        if (Constants.COLLECTED.equals(donationStatus)) {
             // donation has been collected, change the text and show the delete donation button
             donationStatusDisplay.setText("Collected");
             donationStatusDisplay.setTextColor(getContext().getResources().getColor(R.color.deepGreen));
@@ -81,15 +81,13 @@ public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDet
 
             deleteDonationDetailsBtn.setVisibility(View.VISIBLE);
             deleteDonationDetailsBtn.setOnClickListener(listener);
-        }
-        else{
+        } else {
             // means the donation is still to be picked up!
             donationStatusDisplay.setText("Waiting for pickup....");
             donationStatusDisplay.setTextColor(getContext().getResources().getColor(R.color.deepRed));
             parentLayout.setCardBackgroundColor(getContext().getResources().getColor(R.color.lightRed));
             deleteDonationDetailsBtn.setVisibility(View.GONE);
         }
-
 
 
         return convertView;
@@ -114,11 +112,11 @@ public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDet
                         public void onClick(DialogInterface dialog, int which) {
 
                             final ProgressDialog pd = new ProgressDialog(getContext());
+                            pd.setCancelable(false);
+                            pd.setCanceledOnTouchOutside(false);
+
                             pd.setMessage("Deleting donation data...");
                             pd.show();
-
-                            // write to the firestore about donor's contribution
-                            writeToFirestore(data.getDonorUID());
 
                             FirebaseStorage.getInstance().getReferenceFromUrl(data.getDonationMainPhoto()).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -155,23 +153,4 @@ public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDet
         }
     };
 
-    private void writeToFirestore(String uid){
-
-        final DocumentReference db = FirebaseFirestore.getInstance().document("donor_contribution_data/" + uid);
-        db.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                Map<String, Object> prevData = documentSnapshot.getData();
-                long number = (long) prevData.get("number");
-
-                Map<String, Object> newData = new HashMap<>();
-                newData.put("name", data.getDonorName());
-                newData.put("number", number + 1); // increment the donation number by one
-
-                db.update(newData);
-
-            }
-        });
-    }
 }

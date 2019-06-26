@@ -131,6 +131,9 @@ public class AvailableDonationDetailAdapter extends ArrayAdapter<AvailableDonati
                             public void onClick(DialogInterface dialog, int which) {
 
                                 final ProgressDialog pd = new ProgressDialog(getContext());
+                                pd.setCancelable(false);
+                                pd.setCanceledOnTouchOutside(false);
+
                                 pd.setMessage("Please wait...");
 
                                 FirebaseDatabase.getInstance().getReference().child("donation_data_under_process").child(data.getDonationKey())

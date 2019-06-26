@@ -38,6 +38,9 @@ public class OtpVerificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_otp_verification);
 
         pd = new ProgressDialog(OtpVerificationActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
+
         fbAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();

@@ -42,6 +42,8 @@ public class ProfileUpdateActivity extends AppCompatActivity {
 
         pd = new ProgressDialog(ProfileUpdateActivity.this);
         pd.setMessage("Please wait...");
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
 
 
         final SharedPreferences sharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);

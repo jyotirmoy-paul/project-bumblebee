@@ -78,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
         TextView forgotPassword = findViewById(R.id.forgot_password);
 
         pd = new ProgressDialog(LoginActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

@@ -71,6 +71,9 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         aadharCardReqView = findViewById(R.id.aadhar_card_req_view);
 
         pd = new ProgressDialog(ProfileUpdateActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
+
 
         final SharedPreferences sharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE);
 

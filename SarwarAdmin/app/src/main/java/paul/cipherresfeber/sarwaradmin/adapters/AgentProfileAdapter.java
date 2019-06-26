@@ -116,6 +116,9 @@ public class AgentProfileAdapter extends ArrayAdapter<DeliveryAgentProfile> {
                                 // complete the verification of the delivery agent
 
                                 final ProgressDialog pd = new ProgressDialog(getContext());
+                                pd.setCancelable(false);
+                                pd.setCanceledOnTouchOutside(false);
+
                                 pd.setMessage("Please wait...");
 
                                 FirebaseDatabase.getInstance().getReference().child("delivery_agent_data").child(agentProfile.getDeliveryAgentUID())

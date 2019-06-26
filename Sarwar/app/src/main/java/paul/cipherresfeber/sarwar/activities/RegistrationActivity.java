@@ -53,6 +53,8 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         pd = new ProgressDialog(this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
 
         fbAuth = FirebaseAuth.getInstance();
 

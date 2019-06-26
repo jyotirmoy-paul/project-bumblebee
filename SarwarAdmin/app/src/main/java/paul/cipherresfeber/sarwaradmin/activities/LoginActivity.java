@@ -36,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         pd = new ProgressDialog(LoginActivity.this);
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
 
         findViewById(R.id.verify_btn).setOnClickListener(new View.OnClickListener() {
             @Override

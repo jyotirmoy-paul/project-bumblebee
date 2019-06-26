@@ -56,6 +56,9 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
 
                 final ProgressDialog pd = new ProgressDialog(DonationDetailsActivity.this);
+                pd.setCancelable(false);
+                pd.setCanceledOnTouchOutside(false);
+
                 pd.setMessage("Marking donation as collected...");
                 pd.show();
 

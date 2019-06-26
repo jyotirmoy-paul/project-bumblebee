@@ -79,6 +79,12 @@ public class CollectedItemsFragment extends Fragment {
                                      break;
                                  }
                             }
+
+                            if(listView.getVisibility() == View.GONE){
+                                listView.setVisibility(View.VISIBLE);
+                                preLoading.setVisibility(View.GONE);
+                            }
+
                         }
 
                     }
