@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.mr_paul.sarwar_delivery">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="paul.cipherresfeber.sarwardelivery">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -8,15 +9,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".UtilityPackage.App"
+        android:name="paul.cipherresfeber.sarwardelivery.util.App"
         android:allowBackup="true"
         android:icon="@drawable/sarwar_logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/sarwar_logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".LoginActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,27 +27,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrationActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.RegistrationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ProfileUpdateActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.ProfileUpdateActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.ForgotPasswordActivity"
             android:screenOrientation="portrait" />
 
-        <service android:name=".Services.FirebaseInstanceService">
+        <service android:name="paul.cipherresfeber.sarwardelivery.services.FirebaseInstanceService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".Services.BackgroundLocationService" />
+        <service android:name="paul.cipherresfeber.sarwardelivery.services.BackgroundLocationService" />
 
         <activity
-            android:name=".DonationDetailsActivity"
+            android:name="paul.cipherresfeber.sarwardelivery.activities.DonationDetailsActivity"
             android:screenOrientation="portrait" />
     </application>
 

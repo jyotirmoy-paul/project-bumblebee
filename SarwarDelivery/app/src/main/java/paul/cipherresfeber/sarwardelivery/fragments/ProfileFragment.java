@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_delivery.Fragments;
+package paul.cipherresfeber.sarwardelivery.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.mr_paul.sarwar_delivery.ProfileUpdateActivity;
-import com.android.mr_paul.sarwar_delivery.R;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.Constants;
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.activities.ProfileUpdateActivity;
+import paul.cipherresfeber.sarwardelivery.util.Constants;
 import com.bumptech.glide.Glide;
 
 public class ProfileFragment extends Fragment {

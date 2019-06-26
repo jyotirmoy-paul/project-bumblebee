@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_delivery.UtilityPackage;
+package paul.cipherresfeber.sarwardelivery.util;
 
 public class Constants {
 

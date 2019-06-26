@@ -1,11 +1,9 @@
-package com.android.mr_paul.sarwar_delivery.UtilityPackage;
+package paul.cipherresfeber.sarwardelivery.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.mr_paul.sarwar_delivery.R;
 import com.bumptech.glide.Glide;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.zip.Inflater;
+
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.models.DonationData;
 
 public class DonationDataAdapter extends ArrayAdapter<DonationData> {
 

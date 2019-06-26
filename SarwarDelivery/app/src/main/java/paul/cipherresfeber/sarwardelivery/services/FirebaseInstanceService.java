@@ -1,15 +1,14 @@
-package com.android.mr_paul.sarwar_delivery.Services;
+package paul.cipherresfeber.sarwardelivery.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
-import com.android.mr_paul.sarwar_delivery.R;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.Constants;
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.util.Constants;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

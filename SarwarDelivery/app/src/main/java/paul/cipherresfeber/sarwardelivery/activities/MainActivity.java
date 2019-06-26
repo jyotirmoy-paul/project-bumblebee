@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_delivery;
+package paul.cipherresfeber.sarwardelivery.activities;
 
 
 import android.Manifest;
@@ -22,13 +22,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.mr_paul.sarwar_delivery.Fragments.AboutFragment;
-import com.android.mr_paul.sarwar_delivery.Fragments.DeliveryTaskFragment;
-import com.android.mr_paul.sarwar_delivery.Fragments.FaqFragment;
-import com.android.mr_paul.sarwar_delivery.Fragments.ProfileFragment;
-import com.android.mr_paul.sarwar_delivery.Services.BackgroundLocationService;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.Constants;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.LatLong;
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.fragments.AboutFragment;
+import paul.cipherresfeber.sarwardelivery.fragments.DeliveryTaskFragment;
+import paul.cipherresfeber.sarwardelivery.fragments.FaqFragment;
+import paul.cipherresfeber.sarwardelivery.fragments.ProfileFragment;
+
+import paul.cipherresfeber.sarwardelivery.services.BackgroundLocationService;
+import paul.cipherresfeber.sarwardelivery.util.Constants;
+import paul.cipherresfeber.sarwardelivery.models.LatLong;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -154,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         status.setBackgroundColor(getResources().getColor(R.color.lightGreen));
 
         // start the background service
-        ContextCompat.startForegroundService(MainActivity.this,new Intent(MainActivity.this,BackgroundLocationService.class));
+        ContextCompat.startForegroundService(MainActivity.this,new Intent(MainActivity.this, BackgroundLocationService.class));
 
 
         ref.child("delivery_agent_data").child(FirebaseAuth.getInstance().getCurrentUser().getUid())

@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_delivery.Fragments;
+package paul.cipherresfeber.sarwardelivery.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.mr_paul.sarwar_delivery.R;
+import paul.cipherresfeber.sarwardelivery.R;
 
 public class AboutFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_delivery;
+package paul.cipherresfeber.sarwardelivery.activities;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -13,8 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.Constants;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.LatLong;
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.util.Constants;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -24,12 +25,9 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.UserInfo;
+import paul.cipherresfeber.sarwardelivery.models.UserInfo;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class RegistrationActivity extends AppCompatActivity {

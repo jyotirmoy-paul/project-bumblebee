@@ -1,7 +1,6 @@
-package com.android.mr_paul.sarwar_delivery.Fragments;
+package paul.cipherresfeber.sarwardelivery.fragments;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,10 +12,10 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.android.mr_paul.sarwar_delivery.DonationDetailsActivity;
-import com.android.mr_paul.sarwar_delivery.R;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.DonationData;
-import com.android.mr_paul.sarwar_delivery.UtilityPackage.DonationDataAdapter;
+import paul.cipherresfeber.sarwardelivery.R;
+import paul.cipherresfeber.sarwardelivery.activities.DonationDetailsActivity;
+import paul.cipherresfeber.sarwardelivery.models.DonationData;
+import paul.cipherresfeber.sarwardelivery.adapters.DonationDataAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
