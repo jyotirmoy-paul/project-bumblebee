@@ -1,13 +1,13 @@
-package com.android.mr_paul.sarwar_admin.UtilityPackage;
+package paul.cipherresfeber.sarwaradmin.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.android.mr_paul.sarwar_admin.Fragments.CollectedItemsFragment;
-import com.android.mr_paul.sarwar_admin.Fragments.DeliveryAgentFragment;
-import com.android.mr_paul.sarwar_admin.Fragments.NewsFeedFragment;
-import com.android.mr_paul.sarwar_admin.Fragments.PendingDeliveryFragment;
+import paul.cipherresfeber.sarwaradmin.fragments.CollectedItemsFragment;
+import paul.cipherresfeber.sarwaradmin.fragments.DeliveryAgentFragment;
+import paul.cipherresfeber.sarwaradmin.fragments.NewsFeedFragment;
+import paul.cipherresfeber.sarwaradmin.fragments.PendingDeliveryFragment;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
 

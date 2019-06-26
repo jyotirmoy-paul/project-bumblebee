@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.UtilityPackage;
+package paul.cipherresfeber.sarwaradmin.adapters;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -15,9 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.mr_paul.sarwar_admin.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,6 +31,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.models.AvailableDonationDetailClass;
+import paul.cipherresfeber.sarwaradmin.util.Constants;
 
 
 public class CollectedDonationsAdapter extends ArrayAdapter<AvailableDonationDetailClass> {

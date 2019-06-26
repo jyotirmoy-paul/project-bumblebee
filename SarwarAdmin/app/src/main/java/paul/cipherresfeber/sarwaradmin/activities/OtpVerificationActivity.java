@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin;
+package paul.cipherresfeber.sarwaradmin.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.mr_paul.sarwar_admin.UtilityPackage.Constants;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.UserInfo;
+
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.util.Constants;
+import paul.cipherresfeber.sarwaradmin.models.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

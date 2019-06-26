@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.Fragments;
+package paul.cipherresfeber.sarwaradmin.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,12 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.android.mr_paul.sarwar_admin.DonationDetailViewActivity;
-import com.android.mr_paul.sarwar_admin.R;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.AvailableDonationDetailAdapter;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.AvailableDonationDetailClass;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.CollectedDonationsAdapter;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.Constants;
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.activities.DonationDetailViewActivity;
+
+import paul.cipherresfeber.sarwaradmin.models.AvailableDonationDetailClass;
+import paul.cipherresfeber.sarwaradmin.adapters.CollectedDonationsAdapter;
+import paul.cipherresfeber.sarwaradmin.util.Constants;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

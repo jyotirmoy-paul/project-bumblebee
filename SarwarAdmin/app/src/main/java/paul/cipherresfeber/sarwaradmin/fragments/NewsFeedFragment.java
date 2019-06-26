@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.Fragments;
+package paul.cipherresfeber.sarwaradmin.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.mr_paul.sarwar_admin.R;
+import paul.cipherresfeber.sarwaradmin.R;
+
 
 public class NewsFeedFragment extends Fragment {
     @Nullable

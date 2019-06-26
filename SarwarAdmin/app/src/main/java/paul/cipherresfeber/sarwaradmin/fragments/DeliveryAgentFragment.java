@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.Fragments;
+package paul.cipherresfeber.sarwaradmin.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.android.mr_paul.sarwar_admin.R;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.AgentProfileAdapter;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.DeliveryAgentProfile;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.DeliveryAgentUserInfo;
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.adapters.AgentProfileAdapter;
+import paul.cipherresfeber.sarwaradmin.models.DeliveryAgentProfile;
+import paul.cipherresfeber.sarwaradmin.models.DeliveryAgentUserInfo;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

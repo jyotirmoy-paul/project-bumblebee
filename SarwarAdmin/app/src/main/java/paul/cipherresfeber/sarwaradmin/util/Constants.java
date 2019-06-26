@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.UtilityPackage;
+package paul.cipherresfeber.sarwaradmin.util;
 
 public class Constants {
     public static final String SHARED_PREFERENCE_NAME = "com.android.mr_paul";

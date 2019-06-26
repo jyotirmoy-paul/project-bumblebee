@@ -1,11 +1,14 @@
-package com.android.mr_paul.sarwar_admin;
+package paul.cipherresfeber.sarwaradmin.activities;
 
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.PageAdapter;
+
+
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.adapters.PageAdapter;
 
 public class MainActivity extends AppCompatActivity {
     @Override

@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin;
+package paul.cipherresfeber.sarwaradmin.activities;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -7,9 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.mr_paul.sarwar_admin.UtilityPackage.DonationData;
+
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.models.DonationData;
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;

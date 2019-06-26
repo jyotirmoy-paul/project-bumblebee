@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.Services;
+package paul.cipherresfeber.sarwaradmin.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -6,18 +6,12 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 
-import com.android.mr_paul.sarwar_admin.MainActivity;
-import com.android.mr_paul.sarwar_admin.R;
-import com.android.mr_paul.sarwar_admin.UtilityPackage.Constants;
+import paul.cipherresfeber.sarwaradmin.R;
+import paul.cipherresfeber.sarwaradmin.activities.MainActivity;
+import paul.cipherresfeber.sarwaradmin.util.Constants;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

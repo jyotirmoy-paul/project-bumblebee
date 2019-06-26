@@ -1,4 +1,4 @@
-package com.android.mr_paul.sarwar_admin.UtilityPackage;
+package paul.cipherresfeber.sarwaradmin.models;
 
 
 public class DonationData {
