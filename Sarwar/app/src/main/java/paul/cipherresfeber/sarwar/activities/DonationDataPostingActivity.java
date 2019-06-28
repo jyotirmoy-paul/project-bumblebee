@@ -53,6 +53,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -392,13 +393,12 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
 
     // time period checker method
     public Boolean isInTimePeriod(){
-        return true; // TODO: comment this line, intended for testing purposes only
-/*
+
         Calendar now = Calendar.getInstance();
         int hour = now.get(Calendar.HOUR_OF_DAY);
 
         return (hour >= 6 && hour < 12) || (hour >= 13 && hour < 18);
-*/
+
     }
 
 
