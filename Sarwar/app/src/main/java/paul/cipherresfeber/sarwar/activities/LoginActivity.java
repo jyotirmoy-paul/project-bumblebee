@@ -66,11 +66,20 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
         // if user is logged in directly go to the main activity
         sharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE);
-        if(sharedPreferences.getBoolean(Constants.IS_USER_LOGGED_IN,false)){
-            startActivity(new Intent(LoginActivity.this, SplashScreenActivity.class));
-            LoginActivity.this.finish();
+
+        try{
+            firebaseAuth.getCurrentUser().getUid();
+            if(sharedPreferences.getBoolean(Constants.IS_USER_LOGGED_IN,false)){
+                startActivity(new Intent(LoginActivity.this, SplashScreenActivity.class));
+                LoginActivity.this.finish();
+            }
+
+        } catch (NullPointerException e){
+            // user not logged in, proceed logging in
         }
 
         ImageView googleSignIn = findViewById(R.id.google_login);
@@ -80,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
         pd = new ProgressDialog(LoginActivity.this);
         pd.setCancelable(false);
         pd.setCanceledOnTouchOutside(false);
-
-        firebaseAuth = FirebaseAuth.getInstance();
 
 
         // handle google sign in

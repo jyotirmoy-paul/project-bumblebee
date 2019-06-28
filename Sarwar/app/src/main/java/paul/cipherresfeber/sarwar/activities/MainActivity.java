@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navUserNameDisplay.setText(userName);
         navUserDetailDisplay.setText(userDetail);
 
-        profileDisplay.setText(userName.toUpperCase().charAt(0) + "");
+        profileDisplay.setText(String.valueOf(userName.toUpperCase().charAt(0)));
 
     }
 
@@ -152,10 +152,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("text/plain");
                     i.putExtra(Intent.EXTRA_SUBJECT, "Sarwar - Donation that matters");
-                    String sAux = "\nSarwar is a great application for donation to the needy! Try it out here: \n";
-                    sAux = sAux + "https://play.google.com/store/apps/details?id=com.android.mr_paul.sarwar";
+                    String sAux = "Sarwar is a great application for donation to the needy. Try it out: \n";
+                    sAux += "https://play.google.com/store/apps/details?id=" + this.getPackageName();
                     i.putExtra(Intent.EXTRA_TEXT, sAux);
-                    startActivity(Intent.createChooser(i, "Choose one"));
+                    startActivity(Intent.createChooser(i, "Share Using"));
                 } catch(Exception e) {
                     Toast.makeText(this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
@@ -176,11 +176,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 break;
             case R.id.nav_email:
-                // call an intent to Gmail app
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + "sarwartechnicalhelp@gmail.com"));
+                // call an intent to gmail app
+                Intent emailIntent =
+                        new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + "sarwartechnicalhelp@gmail.com"));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sarwar Feedback");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "");
-                startActivity(Intent.createChooser(emailIntent, "Chooser Title"));
+                startActivity(Intent.createChooser(emailIntent, "Choose App"));
                 break;
         }
 

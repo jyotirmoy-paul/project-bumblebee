@@ -145,14 +145,16 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
             public void onClick(View v) {
 
                 // try to get the location of the user
-                if (ActivityCompat.checkSelfPermission(DonationDataPostingActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(DonationDataPostingActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(DonationDataPostingActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                        ActivityCompat.checkSelfPermission(DonationDataPostingActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     askForRequiredPermission();
                     return;
                 }
 
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, DonationDataPostingActivity.this);
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, DonationDataPostingActivity.this);
-                pd.setMessage("Getting current Location...");
+                pd.setTitle("Getting current Location");
+                pd.setMessage("Taking too long? Try switching on GPS.");
                 pd.show();
             }
         });
@@ -163,7 +165,8 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
 
                 // check if network is available or not
                 if(!isNetworkAvailable()){
-                    Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DonationDataPostingActivity.this, Constants.TRY_AGAIN_FAILURE,
+                            Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -203,7 +206,8 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
                 progressDialog.setMessage("Sending your donation details...");
                 progressDialog.show();
 
-                final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("donation_details").push();
+                final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                        .getReference().child("donation_details").push();
 
                 final String donationKey = databaseReference.getKey();
 
@@ -233,7 +237,8 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
                                     task.getResult().toString(), latLong, donorAddress, currentDateTime, userRegTokenKey, Constants.STATUS_WAITING
                                     ,FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                            databaseReference.child("donation_data").setValue(donationData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            databaseReference.child("donation_data")
+                                    .setValue(donationData).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
@@ -297,7 +302,8 @@ public class DonationDataPostingActivity extends AppCompatActivity implements Lo
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     progressDialog.cancel();
-                                    Toast.makeText(DonationDataPostingActivity.this, Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(DonationDataPostingActivity.this,
+                                            Constants.NETWORK_ERROR, Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
