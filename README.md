@@ -1,7 +1,14 @@
+<img src="https://github.com/jyotirmoy-paul/project-bumblebee/blob/master/Sarwar/app/src/main/res/drawable-xxxhdpi/sarwar_logo.png" width="150"/>
+
 # Project Bumblebee (Sarwar) - Client, Admin and Delivery Side App
 User-side, Administration-side and Delivery-sided android app for trust 'SARWAR' - seamless and hassle free way of accepting donations from general users.
+
+## Android App live on Play Store
+The final android app can be found on Play Store: [Sarwar](https://play.google.com/store/apps/details?id=paul.cipherresfeber.sarwar)
+
 ## Getting Started
 The following instuctions will get you a copy of the project up and running on your local machine for development and testing purpose.
+
 ### Prerequisites
 What things you need to install the software
 ```
@@ -17,8 +24,10 @@ By now, you would have already downloaded the "google-services.json" file and co
 4. For Authentication, "Email/Password", "Phone", "Google Sign In" and "Facebook Sign In" are used
 ### Installing the App
 Import the app to Android Studio, build the project and finally deploy it in a device (or emulator).
+
 ##  Build With
 * [Google Firebase](https://firebase.google.com/)
 * [Glide](https://github.com/bumptech/glide)
+
 ## Authors
 * **Jyotirmoy Paul** - Initial work - [jyotirmoy-paul](https://github.com/jyotirmoy-paul)
