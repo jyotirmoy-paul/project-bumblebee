@@ -48,7 +48,7 @@ public class Constants {
 
     public static final String COLLECTED = "collected";
 
-    public static final String FACEBOOK_BANNER_AD_KEY = ""; // 275351816662944_285282065669919 // commenting the ad_key for testing purpose
-    public static final String FACEBOOK_INTERSTITIAL_AD_KEY = ""; // 275351816662944_285294879001971 // commenting the ad_key for testing purpose
+    public static final String FACEBOOK_BANNER_AD_KEY = "275351816662944_285282065669919"; // 275351816662944_285282065669919 // commenting the ad_key for testing purpose
+    public static final String FACEBOOK_INTERSTITIAL_AD_KEY = "275351816662944_285294879001971"; // 275351816662944_285294879001971 // commenting the ad_key for testing purpose
 
 }
